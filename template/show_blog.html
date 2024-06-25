@@ -1,0 +1,16 @@
+
+
+
+<h2>پست ها</h2>
+
+
+{% for i in data %}
+
+    <li>{{i.title}}</li>
+    <li>{{i.slug}}</li>
+    <li>{{i.author}}</li>
+
+{% empty %}
+    <li>چیزی یافت نشد</li>
+
+{% endfor %}

@@ -1,0 +1,37 @@
+{% load static %}
+<body>
+
+
+{% if messages %}
+
+{% for msg in  messages %}
+<h3>{{msg}}</h3>
+{% endfor %}
+{% endif %}
+
+
+    {% include 'header.html' %}
+
+    <h2>شما با حساب کاربری {{key_logperson}} وارد شدید</h2>
+
+    <center>
+
+        <h1>Hello World </h1>
+
+
+        <h2>
+            Student : 
+        </h2>
+        {% for i in student %}
+        <li>
+            {{i.name}} - {{i.familly}}
+            <br>
+            {% for j in i.student.all %}
+                <li>{{j.name}} -- استاد {{j.teacher.name}} {{j.teacher.family}}</li>
+            {% endfor %}
+        </li>
+        {% endfor %}
+
+    </center>
+    
+</body>

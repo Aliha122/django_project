@@ -1,0 +1,17 @@
+
+
+{% include 'header.html' %}
+
+
+<h1>
+    login Form 
+</h1>
+
+<form action="" method="POST" >
+    {% csrf_token %}
+    <input type="text" name="username"  >
+    <input type="text" name="passwrd" >
+    <input type="submit" value="send" > 
+</form>
+
+

@@ -1,0 +1,16 @@
+
+{% include 'header.html' %}
+
+<h2>
+    Blog Form 
+</h2>
+
+
+
+<form action="" method = "POST" >
+    {% csrf_token %}
+    <input type="text" name="title" > <br/>
+    <input type="text" name="description" ><br/>
+    <input type="text" name="status_check"> آیا منتشر شود ؟ <br/>
+    <input type="submit" value="send">
+</form>
