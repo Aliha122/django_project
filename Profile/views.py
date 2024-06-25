@@ -37,7 +37,8 @@ def log_user(request) :
     return redirect('home:hello')
                               
 def show_blog(request) : 
-    total_data = blog.objects.filter(status = 'public' ) 
+    total_data = blog.objects.filter(status = 'public' )
+    ### select * from blog 
     
     return render(request , 'show_blog.html' , {'data' : total_data })
     
@@ -48,8 +49,8 @@ def show_person_blog2(request , id ) :
     
 def create_post(request) : 
     
-    if request.method == "POST" : 
-        form = BlogForm(request.POST)
+    if request.method == "GET" : 
+        form = BlogForm(request.GET)
         if form.is_valid() : 
             new_title = form.cleaned_data['title']
             new_description = form.cleaned_data['description']
